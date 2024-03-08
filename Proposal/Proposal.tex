@@ -1,0 +1,109 @@
+%% Standard start of a latex document
+\documentclass[letterpaper,12pt]{article}
+%% Always use 12pt - it is much easier to read
+%% Things written after '%' sign, are ignored by the latex editor - they are how to introduce comments into your .tex source
+%% Anything mathematics related should be put in between '$' signs.
+
+%% Set some names and numbers here so we can use them below
+\newcommand{\myname}{Group 1} %%%%%%%%%%%%%%% ---------> Change this to your name
+% \newcommand{\mynumber}{12345678} %%%%%%%%%%%%%%% ---------> Change this to your student number
+% \newcommand{\hw}{1} %%%%%%%%%%%%%%% --------->  set this to the homework number
+
+%%%%%%
+%% There is a bit of stuff below which you should not have to change
+%%%%%%
+
+%% AMS mathematics packages - they contain many useful fonts and symbols.
+\usepackage{amsmath, amsfonts, amssymb}
+
+%% The geometry package changes the margins to use more of the page, I suggest
+%% using it because standard latex margins are chosen for articles and letters,
+%% not homework.
+\usepackage[paper=letterpaper,left=25mm,right=25mm,top=3cm,bottom=25mm]{geometry}
+%% For details of how this package work, google the ``latex geometry documentation''.
+
+%%
+%% Fancy headers and footers - make the document look nice
+\usepackage{fancyhdr} %% for details on how this work, search-engine ``fancyhdr documentation''
+\pagestyle{fancy}
+%%
+%% The header
+\lhead{MATH 441} % course name as top-left
+\chead{Group Project: Proposal} % homework number in top-centre
+\rhead{ \myname }
+%% This is a little more complicated because we have used `` \\ '' to force a line-break between the name and number.
+%%
+%% The footer
+\lfoot{\myname} % name on bottom-left
+\cfoot{Page \thepage} % page in middle
+%\rfoot{\mynumber} % student number on bottom-right
+%%
+%% These put horizontal lines between the main text and header and footer.
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+%%%
+
+
+% Some useful macros
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumerate}
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\renewcommand\vec{\mathbf}
+
+\newcommand{\st}{\text{ such that } }
+\newcommand{\dee}[1]{\mathrm{d}#1}
+\newcommand{\diff}[2]{ \frac{\dee{#1}}{\dee{#2}} }
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\set}[1]{\left\{#1 \right\}}
+
+
+\begin{document}
+% Put your answsers as items in this enumerate environment and they will be automatically numbered
+\subsection*{Group Project: Proposal}
+\medskip
+
+\subsubsection*{Problem Statement: } Optimize scheduling for the group stages of the Fifa 2026 world cup.
+\begin{itemize}
+\item Schedule games around regions and cities, where each team gets an optimal amount of rest and minimal travel time, while adhering to the given constraints.
+
+\item Utilize combinatorial optimization or constraint satisfaction programming to figure out scheduling, matching teams to cities, minimizing travel time for each team and the various other tournament constraints.
+
+\item We will initially start off by defining a structure to represent a possible match-up, and represent all match-ups on a tree, where a node at depth ‘i’ would be a match on day ‘i’. Then we could use constraint satisfaction to backtrack and search for a path where all nodes satisfy the given constraints.
+\end{itemize}
+
+\subsubsection*{Data + Computations: } 
+Data: 
+\begin{itemize}
+\itemsep0em 
+\item Previous world cup (Fifa 2022) data.
+\item Use current ranking of top 48 teams to determine which teams are potentially within this years world cup
+\item Use pre-existing FIFA world cup draws to design our random draw of groups
+\end{itemize}
+Constraints:
+\begin{itemize}
+\itemsep0em 
+\item 48 Teams total
+\item 12 Groups (4 teams each group)
+\item 3 Regions (16 teams per region, teams only stay within their own region)
+\item 3 Games per team (play each other team within the group once)
+\item 3 Days of rest between every game for each team (affects travel time and scheduling)
+\item Ensure that most popular teams play within the bigger stadiums (define using previous world cup data + existing stadium capacity data + viewership/pay-per-view data)
+\end{itemize}
+\subsubsection*{References + Examples: } 
+\begin{itemize}
+\itemsep0em 
+\item Travelling salesman problem (for scheduling)
+\item Linear programming (for discrete optimization within constraints)
+\item World tour scheduling problem (for inspiration)
+\item Previous world cup data + viewership data + stadium capacity data
+\end{itemize}
+
+\end{document}
