@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath} % For mathematical symbols and equations
+\usepackage{amsfonts} % For mathematical fonts
+\usepackage{amssymb} % For additional mathematical symbols
+\usepackage{graphicx} % For including figures
+\usepackage{cite} % For better handling of citations
+
+% Pseudocode package
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage[margin=1in]{geometry}
+
+\title{Your Research Title}
+\author{
+	Siddharth Nand \and
+	Person 2 \and
+	Person 3 \and
+	Person 4
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \input{abstract.tex}
+\end{abstract}
+
+\section{Introduction}
+\input{intro.tex}
+
+\section{Literature Review}
+\input{lit_review.tex}
+
+\section{Background}
+\input{background.tex}
+
+\section{Mathematical Formulation}
+\input{math_formulation.tex}
+
+\section{Pseudocode}
+\input{pseudocode.tex}
+
+\section{Results}
+\input{results.tex}
+
+\section{Discussion}
+\input{discussion.tex}
+
+\section{Conclusion}
+\input{conclusion.tex}
+
+% Add bibliography
+%\bibliographystyle{plain}
+%\bibliography{your_references_file}
+
+\end{document}
